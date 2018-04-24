@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const handlebars = require('hbs');
 
+const port = process.env.PORT || 3000;
 const app = express();
 
 app.use((req, res, next) =>{
@@ -54,6 +55,6 @@ app.get('/bad', (req, res) => {
         });
 });
 
-app.listen(3000, () => {
-    console.log('Node app started on port: 3000')
+app.listen(port, () => {
+    console.log('Node app started on port: ', port)
 });
